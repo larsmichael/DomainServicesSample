@@ -33,6 +33,6 @@ public class ProductService : BaseUpdatableDiscreteService<Product, Guid>
 
     public IEnumerable<Product> Get(Query<Product> query, ClaimsPrincipal? user = null)
     {
-        return _repository.Get(query);
+        return _repository.Get(query, user);
     }
 }
