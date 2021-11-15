@@ -1,5 +1,6 @@
 using MyServices;
 using MyServices.Data;
+using MyServices.WebApi;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,6 +17,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseExceptionHandling();
 app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();
