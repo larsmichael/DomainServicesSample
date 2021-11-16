@@ -39,11 +39,10 @@ public class ProductsController : ControllerBase
 
     [HttpDelete]
     [Route("{id}")]
-    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [ProducesResponseType(StatusCodes.Status204NoContent)]
     public IActionResult Delete(Guid id)
     {
         _productService.Remove(id);
         return NoContent();
     }
-
 }
