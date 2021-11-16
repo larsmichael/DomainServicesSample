@@ -16,8 +16,7 @@ public class ProductsController : ControllerBase
     [HttpGet]
     public ActionResult<IEnumerable<Product>> GetAll() => Ok(_productService.GetAll());
 
-    [HttpGet]
-    [Route("{id}")]
+    [HttpGet("{id}")]
     public ActionResult<Product> Get(Guid id) => Ok(_productService.Get(id));
 
     [HttpPost]
@@ -37,8 +36,7 @@ public class ProductsController : ControllerBase
         return Ok(_productService.Get(product.Id));
     }
 
-    [HttpDelete]
-    [Route("{id}")]
+    [HttpDelete("{id}")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     public IActionResult Delete(Guid id)
     {
