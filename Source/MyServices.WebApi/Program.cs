@@ -5,8 +5,8 @@ using MyServices.WebApi;
 var builder = WebApplication.CreateBuilder(args);
 
 var products = new List<Product> { 
-    new Product(Guid.NewGuid(), "Coke") { Price = 9.95M },
-    new Product(Guid.NewGuid(), "Fanta") { Price = 8.95M }
+    new Product(Guid.NewGuid(), "Coke") { Price = 1.35M },
+    new Product(Guid.NewGuid(), "Fanta") { Price = 1.85M }
 };
 var productRepository = new InMemoryProductRepository(products);
 builder.Services.AddScoped<IProductRepository>(_ => productRepository);
