@@ -1,21 +1,20 @@
-﻿namespace MyServices.WebApi
+﻿namespace MyServices.WebApi;
+
+using System.ComponentModel.DataAnnotations;
+
+public struct ProductDto
 {
-    using System.ComponentModel.DataAnnotations;
+    public Guid? Id { get; set; }
 
-    public struct ProductDto
+    [Required]
+    [StringLength(100)]
+    public string Name { get; set; }
+
+    [Required, Range(1, double.MaxValue)]
+    public decimal Price { get; set; }
+
+    public Product ToProduct()
     {
-        public Guid? Id { get; set; }
-
-        [Required]
-        [StringLength(100)]
-        public string Name { get; set; }
-
-        [Required, Range(1, double.MaxValue)]
-        public decimal Price { get; set; }
-
-        public Product ToProduct()
-        {
-            return new Product(Id ?? Guid.NewGuid(), Name) { Price = Price };
-        }
+        return new Product(Id ?? Guid.NewGuid(), Name) { Price = Price };
     }
 }
