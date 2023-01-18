@@ -22,7 +22,6 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseExceptionHandling();
-app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();
 app.Run();
