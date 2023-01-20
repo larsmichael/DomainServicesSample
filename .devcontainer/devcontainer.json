@@ -17,7 +17,7 @@
      },
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "dotnet restore && dotnet dev-certs https && dotnet dev-certs https --trust",
+	"postCreateCommand": "dotnet restore",
 
 	// Configure tool-specific properties.
 	"customizations": {
